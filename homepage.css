@@ -1,0 +1,58 @@
+body 
+{
+    font-family: Georgia, 'Times New Roman', Times, serif, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+header 
+{
+    background-color: #160f85;
+    color: #fff;
+    padding: 10px;
+    text-align: center;
+}
+text
+{
+    color: #c0bcf4;
+    height: 30px;
+    width: 200px;
+    top: 100px;
+    left: 200px;
+    text-align: center;
+}
+.quiz
+{
+    top: 300px;
+    align-items: center;
+    position: relative;
+}
+.quiz a
+{
+    text-decoration: none;
+    color: #fff;
+    background: #f92537;
+    padding: 15px 40px;
+    border-radius: 30px;
+}
+body
+{
+        background-image: url("wellness.jpg");
+        background-size: cover;
+        background-repeat: no-repeat;
+}
+footer
+{
+    background-color: #333;
+    text-align: center;
+    padding: 7px;
+}
+footer a 
+{
+    color: #93fdff;
+    text-decoration: none;
+    margin: 0 30px;
+}
+footer a:hover 
+{
+    text-decoration: underline;
+}

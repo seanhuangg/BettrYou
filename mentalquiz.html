@@ -1,0 +1,116 @@
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel = "stylesheet" href = "mentalquiz.css">
+        <title>Quiz</title>
+    <body>
+        <header>
+            <h1>Quiz</h1>
+        </header>
+        
+            <div class = "container">
+                <form id="quizForm">
+                    <p>Question 1: What is your mood today?</p><br>
+                    <input type="radio" id="q1_option1" name="q1" value="Sad">
+                    <label for="q1_option1">Sad</label><br><br>
+                    <input type="radio" id="q1_option2" name="q1" value="Neutral">
+                    <label for="q1_option2">Neutral</label><br><br>
+                    <input type="radio" id="q1_option3" name="q1" value="Angry">
+                    <label for="q1_option3">Angry</label><br><br>
+                    <input type="radio" id="q1_option4" name="q1" value="Irritated">
+                    <label for="q1_option3">Depressed</label><br><br><br><br>
+        
+                    <p>Question 2: Have you noticed any changes in your sleep(patterns, quality, etc.)?</p><br>
+                    <input type="radio" id="q2_option1" name="q2" value="Yes">
+                    <label for="q2_option1">Yes</label><br><br>
+                    <input type="radio" id="q2_option2" name="q2" value="No">
+                    <label for="q2_option2">No</label><br><br><br><br>
+
+                    <p>Question 3: Have you noticed any changes in appetite?</p><br>
+                    <input type="radio" id="q3_option1" name="q3" value="Yes">
+                    <label for="q3_option1">Yes</label><br><br>
+                    <input type="radio" id="q3_option2" name="q3" value="No">
+                    <label for="q3_option2">No</label><br><br><br><br>
+
+                    <p>Question 4: Have you lost interest and/or pleasure in activities you typically enjoy?</p><br>
+                    <input type="radio" id="q4_option1" name="q4" value="Yes">
+                    <label for="q4_option1">Yes</label><br><br>
+                    <input type="radio" id="q4_option2" name="q4" value="No">
+                    <label for="q4_option2">No</label><br><br><br><br>
+
+                    <p>Question 5s: Do you have a trusted person(family, friend, coworker, etc.) that you can speak to?</p><br>
+                    <input type="radio" id="q5_option1" name="q5" value="Yes">
+                    <label for="q5_option1">Yes</label><br><br>
+                    <input type="radio" id="q5  _option2" name="q5" value="No">
+                    <label for="q5_option2">No</label><br><br><br><br>
+        
+                    <button type="button" onclick="submitForm()">Submit</button>
+                </form>
+            </div>
+        
+    <script>
+        function submitForm() 
+        {
+            var q1Value = document.querySelector('input[name="q1"]:checked').value;
+            var q2Value = document.querySelector('input[name="q2"]:checked').value;
+            var q3Value = document.querySelector('input[name="q3"]:checked').value;
+            var q4Value = document.querySelector('input[name="q4"]:checked').value;
+            var q5Value = document.querySelector('input[name="q5"]:checked').value;
+
+            // Collect and process quiz results here
+
+            //Everything is bad
+            if(q1Value === "Sad" && q2Value === "Yes" && q3Value === "Yes" && q4Value === "Yes")
+            {
+                //nobody to talk to, worst option
+                if(q5Value == "No")
+                {
+                    // Redirect to the results page
+                    window.location.href = "mentalresults3.html";
+                }
+                //second worst option, but can suggest talking to someone
+                else
+                {
+                    // Redirect to the results page
+                    window.location.href = "mentalresults1.html";
+                }
+            }
+
+            //not everything is bad, but still might be
+            else if(q1Value === "Sad")
+            {
+                if(q2Value === "Yes" || q3Value === "Yes" || q4Value === "Yes")
+                {
+                    window.location.href = "mentalresults1.html"
+                }
+            }
+
+            //person is likely stressed, suggest relaxation excercises
+            else if(q1Value === "Angry" || q1Value === "Irritated")
+            {
+                    // Redirect to the results page
+                    window.location.href = "mentalresults2.html";
+            }
+
+            //consolidate on losing interest in hobbies
+            else if(q4Value === "Yes")
+            {
+                window.location.href= "mentalresults5.html";
+            }
+            
+            //everything is quite normal, suggest keeping in check
+            else
+            {
+                    // Redirect to the results page
+                    window.location.href = "mentalresults4.html";
+            }
+            
+            
+        };
+        
+    </script>
+
+    </body>
+</head>
+</html>

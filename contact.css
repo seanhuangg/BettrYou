@@ -1,0 +1,32 @@
+body 
+{
+    font-family: Georgia, 'Times New Roman', Times, serif, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f0f0f0;
+    text-align: center;
+    background-image: url("gradient2.jpg");
+}
+
+header 
+{
+    background-color: #160f85;
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+}
+
+.contactList 
+{
+    font-family: Georgia, 'Times New Roman', Times, serif, sans-serif;
+}
+
+.container 
+{
+    width: 80%;
+    margin: 40px auto;
+    background-color: #d5d2ff;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}

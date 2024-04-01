@@ -1,0 +1,111 @@
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel = "stylesheet" href = "physquiz.css">
+        <title>Quiz</title>
+    <body>
+        <header>
+            <h1>Quiz</h1>
+        </header>
+        
+            <div class = "container">
+                <p>Question 1: Have there been any stressors in your life lately?</p><br>
+                <input type="radio" id="q1_option1" name="q1" value="Yes">
+                <label for="q1_option1">Yes</label><br><br>
+                <input type="radio" id="q1_option2" name="q1" value="No">
+                <label for="q1_option2">No</label><br><br><br>
+    
+                <p>Question 2: Are you able to effectively cope with difficult emotions, or do you find yourself overwhelmed at times?</p><br>
+                <input type="radio" id="q2_option1" name="q2" value="I can effectively cope">
+                <label for="q2_option1">I can effectively cope</label><br><br>
+                <input type="radio" id="q2_option2" name="q2" value="It is oftentimes difficult">
+                <label for="q2_option2">It is oftentimes difficult</label><br><br><br>
+
+                <p>Question 3: Are there any activities or hobbies that you find particularly helpful in improving your mood?</p><br>
+                <input type="radio" id="q3_option1" name="q3" value="Yes">
+                <label for="q3_option1">Yes</label><br><br>
+                <input type="radio" id="q3_option2" name="q3" value="No">
+                <label for="q3_option2">No</label><br><br><br><br>
+
+                <p>Question 4: Is there a trusted person you can talk to about your emotions?</p><br>
+                <input type="radio" id="q4_option1" name="q4" value="Yes">
+                <label for="q4_option1">Yes</label><br><br>
+                <input type="radio" id="q4_option2" name="q4" value="No">
+                <label for="q4_option2">No</label><br><br><br><br>
+
+                <p>Question 5: Please describe your current mood.</p><br>
+                <input type="radio" id="q5_option1" name="q5" value="Very bad mood">
+                <label for="q5_option1">Very poor</label><br><br>
+                <input type="radio" id="q5_option2" name="5" value="Bad mood">
+                <label for="q5_option2">Poor</label><br><br>
+                <input type="radio" id="q5_option3" name="5" value="Neutral">
+                <label for="q5_option3">Neutral</label><br><br>
+                <input type="radio" id="q5_option4" name="5" value="Good mood">
+                <label for="q5_option4">Good</label><br><br>
+                <input type="radio" id="q5_option5" name="5" value="Very good mood">
+                <label for="q5_option5">Very good</label><br><br><br><br>
+    
+                <input type="submit" value="Submit">
+            </div>
+
+        <script>
+            function submitForm() 
+            {
+                var q1Value = document.querySelector('input[name="q1"]:checked').value;
+                var q2Value = document.querySelector('input[name="q2"]:checked').value;
+                var q3Value = document.querySelector('input[name="q3"]:checked').value;
+                var q4Value = document.querySelector('input[name="q4"]:checked').value;
+                var q5Value = document.querySelector('input[name="q5"]:checked').value;
+    
+                // Collect and process quiz results here
+    
+                //stressors in life, depending on if there are coping methods or not, give suggestions
+                if(q1Value === "Yes")
+                {
+                    if(q3Value === "Yes")
+                    {
+                        window.location.href ="emoresult1.html";
+                    }
+                    else if(q3Value === "No")
+                    {
+                        window.location.href = "emoresult2.html"
+                    }
+                }
+    
+                
+                else if(q5Value === "Very bad mood" || q5Value === "Bad mood")
+                {
+                        
+                    if(q4Value === "Yes")
+                    {
+                        window.location.href = "emoresult3.html";
+                    }
+                    else
+                    {
+                        window.location.href = "emoresult4.html";
+                    }
+                }
+                
+                //tell them they are doing a great job
+                else if(q1Value === "Yes")
+                {
+                    if(q5Value === "Good mood" || q5Value === "Very good mood")
+                    {
+                        window.location.href = "emoresult5.html"
+                    }
+                }
+                
+                //tell them are doing great, and to just be aware of their emotions and talk about it if neededs
+                else
+                {
+                    window.location.href = "emoresult6.html";
+                }
+                
+            };
+            
+        </script>
+        
+    </body>
+</head>
+</html>

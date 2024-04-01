@@ -1,0 +1,116 @@
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel = "stylesheet" href = "physquiz.css">
+        <title>Quiz</title>
+    <body>
+        <header>
+            <h1>Quiz</h1>
+        </header>
+        
+            <div class = "container">
+                <p>Question 1: How many days per week do you engage in physical activity?</p><br>
+                <input type="radio" id="q1_option1" name="q1" value="Less than 2">
+                <label for="q1_option1">Less than 2 days per week</label><br><br>
+                <input type="radio" id="q1_option2" name="q1" value="3 to 5">
+                <label for="q1_option2">3 to 5 days per week</label><br><br>
+                <input type="radio" id="q1_option3" name="q1" value="More than 5">
+                <label for="q1_option3">More than 5 days per week</label><br><br><br><br>
+    
+                <p>Question 2: What type of physical activity do you primarily engage in?</p><br>
+                <input type="radio" id="q2_option1" name="q2" value="Cardio">
+                <label for="q2_option1">Cardiovascular Excercise</label><br><br>
+                <input type="radio" id="q2_option2" name="q2" value="Weight Training">
+                <label for="q2_option2">Weight/Strength Training</label><br><br>
+                <input type="radio" id="q2_option3" name="q2" value="Other">
+                <label for="q2_option3">Other</label><br><br><br><br>
+
+                <p>Question 3: Have you noticed any recent changes in weight(gain/loss of more than 10lbs)?</p><br>
+                <input type="radio" id="q3_option1" name="q3" value="Yes">
+                <label for="q3_option1">Yes</label><br><br>
+                <input type="radio" id="q3_option2" name="q3" value="No">
+                <label for="q3_option2">No</label><br><br><br><br>
+
+                <p>Question 4: Please select the choice that best describes your daily energy levels.</p><br>
+                <input type="radio" id="q4_option1" name="q4" value="Very drained, low energy and loss of motivation">
+                <label for="q4_option1">Very drained, low energy and motivation</label><br><br>
+                <input type="radio" id="q4_option2" name="q4" value="Slightly tired, loss of motivation on some days">
+                <label for="q4_option2">Slightly tired, loss of motivation on some days</label><br><br>
+                <input type="radio" id="q4_option3" name="q4" value="Neutral">
+                <label for="q4_option3">Neutral</label><br><br>
+                <input type="radio" id="q4_option4" name="q4" value="Wake up refreshed, but gets tired throughout the day">
+                <label for="q4_option4">Wake up refreshed, but gets tired throughout the day</label><br><br>
+                <input type="radio" id="q4_option5" name="q4" value="Always high energy, does not feel tired at all">
+                <label for="q4_option5">Always high energy, does not feel tired at all</label><br><br><br><br>
+
+                <p>Question 5: Please select the choice that best describes your sleep quality.</p><br>
+                <input type="radio" id="q5_option1" name="q5" value="Very poor">
+                <label for="q5_option1">Very poor</label><br><br>
+                <input type="radio" id="q5_option2" name="q5" value="Poor">
+                <label for="q5_option2">Poor</label><br><br>
+                <input type="radio" id="q5_option3" name="q5" value="Neutral">
+                <label for="q5_option3">Neutral</label><br><br>
+                <input type="radio" id="q5_option4" name="q5" value="Good">
+                <label for="q5_option4">Good</label><br><br>
+                <input type="radio" id="q5_option5" name="q5" value="Very good">
+                <label for="q5_option5">Very good</label><br><br><br><br>
+    
+                <button type="button" onclick="submitForm()">Submit</button>
+            </div>
+        
+        <script>
+            function submitForm() 
+            {
+                var q1Value = document.querySelector('input[name="q1"]:checked').value;
+                var q2Value = document.querySelector('input[name="q2"]:checked').value;
+                var q3Value = document.querySelector('input[name="q3"]:checked').value;
+                var q4Value = document.querySelector('input[name="q4"]:checked').value;
+                var q5Value = document.querySelector('input[name="q5"]:checked').value;
+    
+                // Collect and process quiz results here
+    
+                //Get more excercise, suggest a few
+                if(q1Value === "Less than 2")
+                {
+                    if(q5Value === "Poor" || q5Value === "Very poor"|| q5Value === "Neutral")
+                    {
+                        window.location.href ="physresult1.html";
+                    }
+                }
+    
+                //possible diet problems
+                else if(q1Value === "3 to 5" || q1Value === "More than 5")
+                {
+                        
+                    if(q4Value === "Slightly tired, loss of motivation on some days" || q4Value === "Very drained, low energy and loss of motivation")
+                    {
+                        window.location.href = "physresult2.html";
+                    }
+                }
+    
+                //suggest focusing on diet
+                else if(q3Value === "Yes")
+                {
+                    window.location.href= "physresult3.html";
+                }
+                
+                //suggest sleep habits
+                else if(q5Value === "Very poor"|| q5Value === "Poor")
+                {
+                        // Redirect to the results page
+                        window.location.href = "physresult4.html";
+                }
+                
+                else
+                {
+                    window.location.href = "physresult5.html";
+                }
+                
+            };
+            
+        </script>
+
+    </body>
+</head>
+</html>

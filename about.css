@@ -1,0 +1,57 @@
+body 
+{
+    font-family: Georgia, 'Times New Roman', Times, serif, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f0f0f0;
+    text-align: center;
+    background-image: url("gradient.jpg");
+}
+
+.programList 
+{
+    font-family: Georgia, 'Times New Roman', Times, serif, sans-serif;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    position: relative;
+}
+
+header 
+{
+    background-color: #160f85;
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+}
+
+footer 
+{
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 10px;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+
+.container 
+{
+    width: 80%;
+    margin: 20px auto;
+    background-color: #d5d2ff;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+.container h1:first-child
+{
+    margin-bottom: 200px;
+}
+
+.indent 
+{
+    text-indent: 20px;
+    position: relative;
+}

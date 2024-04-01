@@ -1,0 +1,49 @@
+*{
+    margin: 0;
+    padding:0;
+    font-family: Georgia, 'Times New Roman', Times, serif, sans-serif;
+    box-sizing: border-box;
+}
+
+header 
+{
+    background-color: #160f85;
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+}
+
+body 
+{
+    font-family: Georgia, 'Times New Roman', Times, serif, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f0f0f0;
+    text-align: center;
+    background-image: url("gradient.jpg");
+}
+
+.container 
+{
+    width: 85%;
+    margin: 20px auto;
+    background-color: none;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+.text
+{
+    text-decoration: none;
+    color: #1adbf0;
+    margin: 0;
+    font-size: 36px;
+    cursor: pointer;
+    padding: 90px;
+}
+.text a:hover
+{
+    font-weight: 700;
+    text-decoration: underline;
+}
